@@ -19,6 +19,7 @@ Table of contents
       * [MaxReads](#maxreads)
       * [Service](#service)
    * [Execute the request and get the result](#execute-the-request-and-get-the-result)
+* [Thanks](#thanks)
 
 ## Quick test guide
 ### Build the example
@@ -191,4 +192,7 @@ try {
         std::cout<<e.what()<<std::endl;
     }
 ```
+## Thanks
+For parsing the cloud result this example uses Niels Lohmann's JSON parser for C++.
+You can reach the project here: https://github.com/nlohmann/json
 
