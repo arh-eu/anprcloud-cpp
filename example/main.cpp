@@ -73,8 +73,6 @@ int main(int argc, char *argv[])
         }
     }
 
-
-
     return 0;
 }
 
@@ -82,7 +80,7 @@ CloudParams getParams(int argc, char *argv[])
 {
     CloudParams params;
     params.url = "https://api-eu.anpr-cloud.com/free";
-    if( argc == 1)
+    if( argc == 1) //print the help
     {
         std::cerr << "usage: ./ANPRCloudService yourApiKey [url]"<<std::endl;
         std::cerr << "default url for testing: https://api-eu.anpr-cloud.com/free" <<std::endl<<std::endl;
