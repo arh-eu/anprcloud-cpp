@@ -72,17 +72,15 @@ Please open the Dockerfile and replace 'yourApiKey' with your apiKey. Then build
 docker build -t cloudtest:latest .
 ```
 The last build step is the running of the example code. The output shall look similar to this.
-
-```sh
-Step 9/9 : RUN ./ANPRCloudService yourApiKey
+<pre><code>Step 9/9 : RUN ./ANPRCloudService yourApiKey
  ---> Running in 417c5946db85
-HUN MDD955
-DEU TÜX5000 Opel Astra
+<b>HUN MDD955</b>
+<b>DEU TÜX5000 Opel Astra</b>
 Removing intermediate container 417c5946db85
  ---> 0af5dc555bdd
 Successfully built 0af5dc555bdd
 Successfully tagged cloudtest:latest
-```
+</code></pre>
 
 ## How to use
 ### Basic example
