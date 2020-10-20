@@ -168,7 +168,7 @@ ANPRCloudRequest requestANPR_MMR = ANPRCloudRequest::builder()
 The execute function returns only after the call succeded or failed for some reason.
 ```cpp
 try {
-        ANPRCloudResult result = service.execute(reqs[i]);
+        ANPRCloudResult result = service.execute(requestANPR_MMR);
         if(result.hasVehicle())
         {
             std::vector<Vehicle> vehicles = result.getVehicles();
