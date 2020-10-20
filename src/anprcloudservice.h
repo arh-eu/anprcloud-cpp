@@ -68,6 +68,7 @@ namespace anprcloud {
         curl_slist *getHeaders();
         std::string getPostFields(anprcloud::ANPRCloudRequest request);
         void checkServiceSettings();
+        void checkHTTPCode(long http_code);
     };
 }
 

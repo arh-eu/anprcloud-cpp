@@ -56,6 +56,22 @@ namespace anprcloud {
 
     static ImageMissing imageMissing;
 
+    class QueueFull : public ANPRCloudServiceException
+    {
+    public:
+        virtual const char *what() const noexcept override;
+    };
+
+    static QueueFull queueFull;
+
+    class InternalServerError : public ANPRCloudServiceException
+    {
+    public:
+        virtual const char *what() const noexcept override;
+    };
+
+    static InternalServerError internalServerError;
+
 
     class MissingUrlException : public ANPRCloudServiceException
     {
@@ -72,5 +88,45 @@ namespace anprcloud {
     };
 
     static MissingApiKeyException missingApiKeyException;
+
+    class MethodTypeNotSupported : public ANPRCloudServiceException
+    {
+    public:
+        virtual const char *what() const noexcept override;
+    };
+
+    static MethodTypeNotSupported methodTypeNotSupported;
+
+    class AnprTimeout : public ANPRCloudServiceException
+    {
+    public:
+        virtual const char *what() const noexcept override;
+    };
+
+    static AnprTimeout anprTimeout;
+
+    class ImageSizeTooLarge : public ANPRCloudServiceException
+    {
+    public:
+        virtual const char *what() const noexcept override;
+    };
+
+    static ImageSizeTooLarge imageSizeTooLarge;
+
+    class LimitExceededError : public ANPRCloudServiceException
+    {
+    public:
+        virtual const char *what() const noexcept override;
+    };
+
+    static LimitExceededError limitExceededError;
+
+    class NoTimelyResponse : public ANPRCloudServiceException
+    {
+    public:
+        virtual const char *what() const noexcept override;
+    };
+
+    static NoTimelyResponse noTimelyResponse;
 }
 #endif // ANPRCLOUDSERVICEEXCEPTION_H

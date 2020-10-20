@@ -66,6 +66,7 @@ void ANPRCloudService::checkServiceSettings()
     }
 }
 
+
 ANPRCloudResult ANPRCloudService::execute(anprcloud::ANPRCloudRequest request)
 {
     checkServiceSettings();
@@ -105,10 +106,7 @@ ANPRCloudResult ANPRCloudService::execute(anprcloud::ANPRCloudRequest request)
     curl_easy_cleanup(curl_handle);
     free(headers);
 
-    if(http_code == 403)
-    {
-        throw unauthorizedUser;
-    }
+    checkHTTPCode(http_code);
 
     std::string str(result.memory);
     nlohmann::json jsonResp = nlohmann::json::parse(str);
@@ -116,6 +114,26 @@ ANPRCloudResult ANPRCloudService::execute(anprcloud::ANPRCloudRequest request)
 
     return anprResult;
 }
+
+
+void ANPRCloudService::checkHTTPCode(long http_code)
+{
+    switch (http_code) {
+    case 401 : throw missingApiKeyException;
+    case 403 : throw unauthorizedUser;
+    case 405 : throw methodTypeNotSupported;
+    case 408 : throw anprTimeout;
+    case 413 : throw imageSizeTooLarge;
+    case 429 : throw limitExceededError;
+    case 500 : throw internalServerError;
+    case 503 : throw queueFull;
+    case 504 : throw noTimelyResponse;
+    default:
+        break;
+
+    }
+}
+
 curl_slist* ANPRCloudService::getHeaders()
 {
     curl_slist *headers = nullptr;
