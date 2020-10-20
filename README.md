@@ -32,7 +32,7 @@ apt-get update
 apt-get install build-essential
 apt-get install libcurl4-gnutls-dev
 ```
-Then you can clone this repository,change to build directory and run make.
+Then you can clone this repository, change to build directory and run make.
 
 ```sh
 git clone https://github.com/arh-eu/anprcloud-cpp.git
@@ -42,7 +42,7 @@ make
 Now you can run the example program with one or two parameters.
 
 #### Test free stage
-Test your free stage like this (and replace 'yourApiKey' with your apiKey.):
+Test your free stage like this (and replace 'yourApiKey' with your apiKey):
 
 ```sh
 ./ANPRCloudService yourApiKey
@@ -55,7 +55,7 @@ Opel Astra
 ```
 
 #### Test production stage
-Test your production stage like this (and replace 'yourApiKey' with your apiKey.):
+Test your production stage like this (and replace 'yourApiKey' with your apiKey):
 
 ```sh
 ./ANPRCloudService yourApiKey https://api-eu.anpr-cloud.com/prod
@@ -133,7 +133,7 @@ Your secret apiKey. Please make sure you don't leak it!
 #### ExecutionTimeoutMs
 The maximal execution time of the request in milliseconds.
 #### ConnectionTimeoutMs
-The maximal connection time in millisecons.
+The maximal connecting time in milliseconds.
 
 ```cpp
 ANPRCloudService service = ANPRCloudService::builder()
