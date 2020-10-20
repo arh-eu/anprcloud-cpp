@@ -23,18 +23,18 @@ int main(int argc, char *argv[])
             .setConnectionTimeoutMs(2000)
             .build();
 
-    BinaryImage no_mmr("../images/example1.jpg");
-    BinaryImage deu("../images/example2.jpg");
+    BinaryImage exampleAnpr("../images/example1.jpg");
+    BinaryImage exampleAnprMmr("../images/example2.jpg");
 
     ANPRCloudRequest requestANPR = ANPRCloudRequest::builder()
-            .setImage(no_mmr)
+            .setImage(exampleAnpr)
             .setLocation("HUN")
             .setMaxReads(1)
             .setService(ServiceType::ANPR)
             .build();
 
     ANPRCloudRequest requestANPR_MMR = ANPRCloudRequest::builder()
-            .setImage(deu)
+            .setImage(exampleAnprMmr)
             .setLocation("DEU")
             .setMaxReads(1)
             .setService(ServiceType::ANPR_MMR)
