@@ -1,3 +1,25 @@
+Table of contents
+=================
+
+* [Quick test guide](#quick-test-guide)
+   * [Build the example](#build-the-example)
+      * [Test free stage](#test-free-stage)
+      * [Test production stage](#test-production-stage)
+   * [Build with Docker](#build-with-docker)
+* [How to use](#how-to-use)
+   * [Basic example](#basic-example)
+   * [Build the ANPRCloudService object](#build-the-anprcloudservice-object)
+      * [Url](#url)
+      * [ApiKey](#apikey)
+      * [ExecutionTimeoutMs](#executiontimeoutms)
+      * [ConnectionTimeoutMs](#connectiontimeoutms)
+   * [Build the ANPRCloudRequest object](#build-the-anprcloudrequest-object)
+      * [Image](#image)
+      * [Location](#location)
+      * [MaxReads](#maxreads)
+      * [Service](#service)
+   * [Execute the request and get the result](#execute-the-request-and-get-the-result)
+
 ## Quick test guide
 ### Build the example
 Before you can compile our C++ code you should install the dependencies.
