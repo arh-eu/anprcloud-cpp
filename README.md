@@ -51,8 +51,7 @@ Test your free stage like this (and replace 'yourApiKey' with your apiKey):
 You will see the following result.
 ```sh
 HUN MDD955
-DEU TÜX5000
-Opel Astra
+DEU TÜX5000 Opel Astra
 ```
 
 #### Test production stage
@@ -78,8 +77,7 @@ The last build step is the running of the example code. The output shall look si
 Step 9/9 : RUN ./ANPRCloudService yourApiKey
  ---> Running in 417c5946db85
 HUN MDD955
-DEU TÜX5000
-Opel Astra
+DEU TÜX5000 Opel Astra
 Removing intermediate container 417c5946db85
  ---> 0af5dc555bdd
 Successfully built 0af5dc555bdd
@@ -111,13 +109,14 @@ try {
              if(vehicles[i].hasPlate())
              {
                  Plate p = vehicles[i].getPlate();
-                 std::cout<< p.country << " " << p.text << std::endl;
+                 std::cout<< p.country << " " << p.text << " ";
              }
              if(vehicles[i].hasMmr())
              {
                  Mmr mmr = vehicles[i].getMmr();
-                 std::cout<< mmr.make<< " " << mmr.model << std::endl;
+                 std::cout<< mmr.make<< " " << mmr.model;
              }
+             std::cout << std::endl;
           }
       }
 
