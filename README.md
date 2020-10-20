@@ -25,6 +25,12 @@ Test your free stage like this (and replace 'yourApiKey' with your apiKey.):
 ```sh
 ./ANPRCloudService yourApiKey
 ```
+You will see the following result.
+```sh
+HUN MDD955
+DEU TÜX5000
+Opel Astra
+```
 
 ### Test production stage
 Test your production stage like this (and replace 'yourApiKey' with your apiKey.):
@@ -52,12 +58,12 @@ try {
       if(result.hasVehicle())
       {
           std::vector<Vehicle> vehicles = result.getVehicles();
-          for(size_t i=0; i< vehicles.size(); i++)
+          for(size_t i=0; i < vehicles.size(); i++)
           {
              if(vehicles[i].hasPlate())
              {
                  Plate p = vehicles[i].getPlate();
-                 std::cout<< p.country<< " " << p.text << std::endl;
+                 std::cout<< p.country << " " << p.text << std::endl;
              }
              if(vehicles[i].hasMmr())
              {
@@ -115,27 +121,27 @@ ANPRCloudRequest requestANPR_MMR = ANPRCloudRequest::builder()
 The execute function returns only after the call succeded or failed for some reason.
 ```cpp
 try {
-            ANPRCloudResult result = service.execute(reqs[i]);
-            if(result.hasVehicle())
+        ANPRCloudResult result = service.execute(reqs[i]);
+        if(result.hasVehicle())
+        {
+            std::vector<Vehicle> vehicles = result.getVehicles();
+            for(size_t i=0; i< vehicles.size(); i++)
             {
-                std::vector<Vehicle> vehicles = result.getVehicles();
-                for(size_t i=0; i< vehicles.size(); i++)
-                {
-                   if(vehicles[i].hasPlate())
-                   {
-                       Plate p = vehicles[i].getPlate();
-                       std::cout<< p.country<< " " << p.text << std::endl;
-                   }
-                   if(vehicles[i].hasMmr())
-                   {
-                       Mmr mmr = vehicles[i].getMmr();
-                       std::cout<< mmr.make<< " " << mmr.model << std::endl;
-                   }
-                }
+               if(vehicles[i].hasPlate())
+               {
+                   Plate p = vehicles[i].getPlate();
+                   std::cout<< p.country<< " " << p.text << std::endl;
+               }
+               if(vehicles[i].hasMmr())
+               {
+                   Mmr mmr = vehicles[i].getMmr();
+                   std::cout<< mmr.make<< " " << mmr.model << std::endl;
+               }
             }
-
-        } catch (ANPRCloudSdkException& e) {
-            std::cout<<e.what()<<std::endl;
         }
+
+    } catch (ANPRCloudSdkException& e) {
+        std::cout<<e.what()<<std::endl;
+    }
 ```
 
