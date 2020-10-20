@@ -57,13 +57,14 @@ int main(int argc, char *argv[])
                    if(vehicles[i].hasPlate())
                    {
                        Plate p = vehicles[i].getPlate();
-                       std::cout<< p.country<< " " << p.text << std::endl;
+                       std::cout<< p.country<< " " << p.text << " ";
                    }
                    if(vehicles[i].hasMmr())
                    {
                        Mmr mmr = vehicles[i].getMmr();
-                       std::cout<< mmr.make<< " " << mmr.model << std::endl;
+                       std::cout<< mmr.make<< " " << mmr.model;
                    }
+                   std::cout << std::endl;
                 }
             }
 
