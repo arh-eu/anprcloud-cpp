@@ -1,5 +1,5 @@
 ## Quick test guide
-
+### Build the example
 Before you can compile our C++ code you should install the dependencies.
 
   - build-essential
@@ -19,7 +19,7 @@ make
 ```
 Now you can run the example program with one or two parameters.
 
-### Test free stage
+#### Test free stage
 Test your free stage like this (and replace 'yourApiKey' with your apiKey.):
 
 ```sh
@@ -32,12 +32,37 @@ DEU TÜX5000
 Opel Astra
 ```
 
-### Test production stage
+#### Test production stage
 Test your production stage like this (and replace 'yourApiKey' with your apiKey.):
 
 ```sh
 ./ANPRCloudService yourApiKey https://api-eu.anpr-cloud.com/prod
 ```
+### Build with Docker
+If you have docker installed on your system, you can test the sdk with the attached Dockerfile.
+Change to anprcloud-cpp directory.
+```sh
+cd anprcloud-cpp
+```
+Please open the Dockerfile and replace 'yourApiKey' with your apiKey. Then build the image with the following command.
+
+```sh
+docker build -t cloudtest:latest .
+```
+The last build step is the running of the example code. The output shall look similar to this.
+
+```sh
+Step 9/9 : RUN ./ANPRCloudService yourApiKey
+ ---> Running in 417c5946db85
+HUN MDD955
+DEU TÜX5000
+Opel Astra
+Removing intermediate container 417c5946db85
+ ---> 0af5dc555bdd
+Successfully built 0af5dc555bdd
+Successfully tagged cloudtest:latest
+```
+
 ## How to use
 ### Basic example
 
