@@ -2,6 +2,7 @@ Table of contents
 =================
 
 * [Quick test guide](#quick-test-guide)
+   * [Get your apiKey](#get-your-apikey)
    * [Build the example](#build-the-example)
       * [Test free stage](#test-free-stage)
       * [Test production stage](#test-production-stage)
@@ -22,6 +23,9 @@ Table of contents
 * [Thanks](#thanks)
 
 ## Quick test guide
+### Get your apiKey
+For using the service you need an apiKey. Please register at https://eu.anpr-cloud.com to get your free credits. It takes just 1 minute.
+After your first login, at the "How to use" subpage you will find your apiKey.
 ### Build the example
 Before you can compile our C++ code you should install the dependencies.
 
