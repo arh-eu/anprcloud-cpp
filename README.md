@@ -24,7 +24,7 @@ Table of contents
 
 ## Quick test guide
 ### Get your apiKey
-For using the service you need an apiKey. Please register at https://eu.anpr-cloud.com to get your free credits. It takes just 1 minute.
+For using the service you need an apiKey. Please register at https://eu.anpr-cloud.com to get your free credits. It takes just 5 minutes.
 After your first login, at the "How to use" subpage you will find your apiKey.
 ### Build the example
 Before you can compile our C++ code you should install the dependencies.
